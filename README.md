@@ -10,10 +10,10 @@ Add package to pubspec.yaml
 
 ```dart
 dependencies:
-	flutter:
-		sdk: flutter
+  flutter:
+    sdk: flutter
 
-	showmore:
+  showmore:
 ```
 
 ***EXAMPLE***
