@@ -25,13 +25,21 @@ class ShowMore extends StatefulWidget{
 
 class ShowMoreState extends State<ShowMore>{
 
-  _onTap update;
+  //_onTap update;
   ShowStatus showStatus;
+  /*
+  void _update(){
+    setState((){
+      showStatus = showStatus == ShowStatus.EXPANDED ? ShowStatus.UNEXPANDED : ShowStatus.EXPANDED;
+      });
+  }*/
+
 
   @override
   void initState(){
     super.initState();
     showStatus = ShowStatus.UNEXPANDED;
+    //update = _update;
   }
 
   @override
@@ -52,11 +60,11 @@ class ShowMoreState extends State<ShowMore>{
           ),
 
         GestureDetector(
-          onTap: update(){
+          onTap: () async{
             setState((){
               showStatus = showStatus == ShowStatus.EXPANDED ? ShowStatus.UNEXPANDED : ShowStatus.EXPANDED;
-              });
-          },
+            });
+            },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -71,7 +79,7 @@ class ShowMoreState extends State<ShowMore>{
 }
 
 
-typedef void _onTap();
+//typedef void _onTap();
 
 enum ShowStatus {
   UNEXPANDED,
