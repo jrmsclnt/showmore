@@ -4,6 +4,10 @@ A simple implementation of "show more" in Flutter.
 
 ![showmoredemo](https://github.com/jrmsclnt/showmore/blob/master/showmoredemo.gif)
 
+```dart
+print('test');
+```
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
