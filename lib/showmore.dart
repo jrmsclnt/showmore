@@ -5,8 +5,13 @@ import 'package:flutter/foundation.dart';
 
 class ShowMore extends StatefulWidget{
 
+  /// The string which will be used by Text widget
   final String content;
+
+  /// The height in pixels of the largest possible size an AnimatedContainer will be
   final double desiredMaxHeight;
+
+  /// The height in pixels of the smallest possible size an AnimatedContainer will be
   final double desiredMinHeight;
 
   const ShowMore({
@@ -25,21 +30,21 @@ class ShowMore extends StatefulWidget{
 
 class ShowMoreState extends State<ShowMore>{
 
-  //_onTap update;
+  _onTap update;
   ShowStatus showStatus;
-  /*
+  
   void _update(){
     setState((){
       showStatus = showStatus == ShowStatus.EXPANDED ? ShowStatus.UNEXPANDED : ShowStatus.EXPANDED;
       });
-  }*/
+  }
 
 
   @override
   void initState(){
     super.initState();
     showStatus = ShowStatus.UNEXPANDED;
-    //update = _update;
+    update = _update;
   }
 
   @override
@@ -61,25 +66,27 @@ class ShowMoreState extends State<ShowMore>{
 
         GestureDetector(
           onTap: () async{
-            setState((){
-              showStatus = showStatus == ShowStatus.EXPANDED ? ShowStatus.UNEXPANDED : ShowStatus.EXPANDED;
-            });
+            update();
             },
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              showStatus == ShowStatus.EXPANDED ? Icon(Icons.keyboard_arrow_up) : Icon(Icons.keyboard_arrow_down),
-              showStatus == ShowStatus.EXPANDED ? Text("Show Less") : Text("Show More"),
-            ]
-            ) 
+          child: Container(
+            width: double.infinity,
+            height: 56.0,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                showStatus == ShowStatus.EXPANDED ? Icon(Icons.keyboard_arrow_up) : Icon(Icons.keyboard_arrow_down),
+                showStatus == ShowStatus.EXPANDED ? Text("Show Less") : Text("Show More"),
+              ]
+              ) 
+            )
           ),
       ]
       );
   }
 }
 
-
-//typedef void _onTap();
+/// Function that is called when a widget has been updated
+typedef void _onTap();
 
 enum ShowStatus {
   UNEXPANDED,
