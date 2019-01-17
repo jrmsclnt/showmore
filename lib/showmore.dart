@@ -1,4 +1,4 @@
-import 'dart:async';
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
@@ -30,7 +30,7 @@ class ShowMore extends StatefulWidget{
 
 class ShowMoreState extends State<ShowMore>{
 
-  _onTap update;
+  _ontap update;
   ShowStatus showStatus;
   
   void _update(){
@@ -86,7 +86,7 @@ class ShowMoreState extends State<ShowMore>{
 }
 
 /// Function that is called when updating a widget
-typedef void _onTap();
+typedef void _ontap();
 
 enum ShowStatus {
   UNEXPANDED,

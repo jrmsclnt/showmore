@@ -26,6 +26,15 @@ ShowMore(
 )
 ```
 
+**content** - The string to display.
+
+
+**desiredMaxHeight** - The height in pixels of the largest possible size a widget will be.
+ 
+
+**desiredMinHeight** - The height in pixels of the smallest possible size a widget will be.
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
