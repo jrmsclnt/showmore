@@ -85,7 +85,7 @@ class ShowMoreState extends State<ShowMore>{
   }
 }
 
-/// Function that is called when a widget has been updated
+/// Function that is called when updating a widget
 typedef void _onTap();
 
 enum ShowStatus {
